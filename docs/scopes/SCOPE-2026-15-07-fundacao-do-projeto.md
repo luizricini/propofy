@@ -104,9 +104,11 @@ Repositório, projeto Next.js (App Router), projeto na Vercel com deploy contín
 
 Concluído em 2026-07-20. Produção em propofy-five.vercel.app (S9 satisfeito no subdomínio da Vercel, conforme a dependência de DNS); preview deploys ativos por branch, protegidos por Vercel Authentication (padrão da plataforma).
 
-### M2 — Banco e schema base
+### M2 — Banco e schema base ✅
 
 Projeto Supabase provisionado via CLI, migrations versionadas, tabelas de perfil e cota. Pré-requisito de S2; nenhum scenario de UI satisfeito diretamente.
+
+Concluído em 2026-07-20. Projeto Supabase em org dedicada, região sa-east-1 (São Paulo). Tabela `profiles` (1:1 com `auth.users`) com `business_name` e `generation_quota` (default 3), RLS com cota não-gravável pelo cliente, e trigger `handle_new_user` criando o perfil + cota atomicamente no signup — pronto para o débito atômico da ADR-003 (função de débito e tabela de gerações ficam no SCOPE-002). Migrations versionadas em `supabase/migrations/`.
 
 ### M3 — Autenticação completa
 
