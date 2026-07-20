@@ -2,7 +2,7 @@
 
 | Field | Value |
 |---|---|
-| **Status** | Ready |
+| **Status** | In Progress |
 | **Date** | 2026-07-15 |
 | **Author** | Luiz |
 | **Related ADRs** | [ADR-001: Stack e infraestrutura](../adr/ADR-2026-15-07-stack-e-infraestrutura.md), [ADR-002: Entrega da proposta](../adr/ADR-2026-15-07-entrega-da-proposta-link-e-print-css.md), [ADR-003: Estratégia de geração com LLM](../adr/ADR-2026-15-07-estrategia-de-geracao-com-llm.md) |
@@ -98,9 +98,11 @@ Um visitante acessa propofy.app, entende o que o produto faz, cria uma conta e c
 
 ## Milestones
 
-### M1 — Bootstrap e pipeline
+### M1 — Bootstrap e pipeline ✅
 
 Repositório, projeto Next.js (App Router), projeto na Vercel com deploy contínuo e preview deploys. Satisfaz: S9.
+
+Concluído em 2026-07-20. Produção em propofy-five.vercel.app (S9 satisfeito no subdomínio da Vercel, conforme a dependência de DNS); preview deploys ativos por branch, protegidos por Vercel Authentication (padrão da plataforma).
 
 ### M2 — Banco e schema base
 
