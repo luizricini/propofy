@@ -110,9 +110,11 @@ Projeto Supabase provisionado via CLI, migrations versionadas, tabelas de perfil
 
 Concluído em 2026-07-20. Projeto Supabase em org dedicada, região sa-east-1 (São Paulo). Tabela `profiles` (1:1 com `auth.users`) com `business_name` e `generation_quota` (default 3), RLS com cota não-gravável pelo cliente, e trigger `handle_new_user` criando o perfil + cota atomicamente no signup — pronto para o débito atômico da ADR-003 (função de débito e tabela de gerações ficam no SCOPE-002). Migrations versionadas em `supabase/migrations/`.
 
-### M3 — Autenticação completa
+### M3 — Autenticação completa ✅
 
 Cadastro com atribuição atômica de cota, login, logout, recuperação de senha, proteção de rotas. Satisfaz: S2, S3, S4, S5, S6, S7.
+
+Concluído em 2026-07-21. Auth por e-mail + senha sobre Supabase Auth (`@supabase/ssr`, sessão em cookie), sem confirmação de e-mail. Rotas em PT-BR: `/cadastro`, `/entrar`, `/recuperar-senha`, `/redefinir-senha` (fluxo PKCE via `/auth/callback`) e `/painel` protegido. Proteção de rota via `src/proxy.ts` (convenção do Next 16), com retorno à URL original após login. Config de auth (site_url, redirect allowlist, senha mín. 8, confirmações off) versionada em `supabase/config.toml` e aplicada via `supabase config push`. Env vars da Supabase configuradas na Vercel (produção). Verificado contra o projeto remoto: signup+trigger+cota, cota não-gravável pelo cliente, e-mail duplicado, login certo/errado e ciclo completo de recuperação; produção no ar com páginas e proteção de rota confirmadas por HTTP. Pendente apenas o passe visual no navegador (extensão do Chrome indisponível na sessão).
 
 ### M4 — Landing page
 
