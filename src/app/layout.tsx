@@ -8,9 +8,21 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "propofy",
+  metadataBase: new URL("https://propofy-five.vercel.app"),
+  title: {
+    default: "propofy — propostas e orçamentos profissionais em minutos",
+    template: "%s",
+  },
   description:
-    "Propostas comerciais e orçamentos profissionais em minutos, com IA.",
+    "Monte propostas comerciais e orçamentos profissionais em minutos com IA e envie um link pronto pelo WhatsApp. Grátis para começar, sem cartão.",
+  openGraph: {
+    title: "propofy — propostas e orçamentos profissionais em minutos",
+    description:
+      "Monte propostas e orçamentos profissionais em minutos com IA e envie um link pronto pelo WhatsApp. Grátis para começar, sem cartão.",
+    type: "website",
+    locale: "pt_BR",
+    siteName: "propofy",
+  },
 };
 
 export default function RootLayout({
