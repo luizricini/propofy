@@ -116,9 +116,11 @@ Cadastro com atribuição atômica de cota, login, logout, recuperação de senh
 
 Concluído em 2026-07-21. Auth por e-mail + senha sobre Supabase Auth (`@supabase/ssr`, sessão em cookie), sem confirmação de e-mail. Rotas em PT-BR: `/cadastro`, `/entrar`, `/recuperar-senha`, `/redefinir-senha` (fluxo PKCE via `/auth/callback`) e `/painel` protegido. Proteção de rota via `src/proxy.ts` (convenção do Next 16), com retorno à URL original após login. Config de auth (site_url, redirect allowlist, senha mín. 8, confirmações off) versionada em `supabase/config.toml` e aplicada via `supabase config push`. Env vars da Supabase configuradas na Vercel (produção). Verificado contra o projeto remoto: signup+trigger+cota, cota não-gravável pelo cliente, e-mail duplicado, login certo/errado e ciclo completo de recuperação; produção no ar com páginas e proteção de rota confirmadas por HTTP. Pendente apenas o passe visual no navegador (extensão do Chrome indisponível na sessão).
 
-### M4 — Landing page
+### M4 — Landing page ✅
 
 Página inicial com proposta de valor e CTA para o cadastro. Satisfaz: S1.
+
+Concluído em 2026-07-22. Landing enxuta, mobile-first, PT-BR: hero com proposta de valor e CTA primário único para `/cadastro`, "como funciona" em 3 passos, CTA final e rodapé. Destaque em verde esmeralda sobre base neutra. Copy voltada ao prestador de serviço (dor real, benefício concreto, sinais de confiança honestos — grátis para começar, sem cartão). Metadata de marketing + Open Graph (pt_BR), indexável. Em produção em `propofy-five.vercel.app`.
 
 ### M5 — Shell PWA
 
